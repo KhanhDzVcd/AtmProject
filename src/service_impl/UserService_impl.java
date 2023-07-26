@@ -44,7 +44,7 @@ public class UserService_impl implements service.UserService{
             }else {
                 setUser(userOBJ);
                 preparedStatement.close();
-                sc.close();
+
                 return true;
             }
 
@@ -79,7 +79,7 @@ public class UserService_impl implements service.UserService{
                 System.out.println("Account balance: $" + resultSet.getDouble("account_balance"));
             }
             preparedStatement.close();
-            sc.close();
+
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -101,7 +101,7 @@ public class UserService_impl implements service.UserService{
 
             }
             preparedStatement.close();
-            sc.close();
+
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -123,7 +123,7 @@ public class UserService_impl implements service.UserService{
             preparedStatement.setString(2,userOBJ.getAccount_number());
             preparedStatement.executeUpdate();
             preparedStatement.close();
-            sc.close();
+
             System.out.println("Deposit successfully!");
 //            transService_impl.deposit(amount,userOBJ);
             return true;
@@ -156,7 +156,7 @@ public class UserService_impl implements service.UserService{
             preparedStatement.setString(3,account_passcode);
             preparedStatement.executeUpdate();
             preparedStatement.close();
-            sc.close();
+
             System.out.println("Withdraw successfully!");
             return true;
             }
@@ -199,8 +199,7 @@ public class UserService_impl implements service.UserService{
             preparedStatement.setDouble(4,amount);
             preparedStatement.setString(5,account_number);
             preparedStatement.executeUpdate();
-            preparedStatement.close();
-            sc.close();
+            preparedStatement.close();;
             System.out.println("Transfer successfully!");
             return true;
             }

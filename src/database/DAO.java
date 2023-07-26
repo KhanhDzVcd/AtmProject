@@ -17,7 +17,7 @@ public class DAO {
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()){
                 preparedStatement.close();
-                sc.close();
+
                 return true;
             }
         }catch (SQLException e){
@@ -42,7 +42,7 @@ public class DAO {
             preparedStatement.setString(4,account_passcode);
             preparedStatement.executeUpdate();
             preparedStatement.close();
-            sc.close();
+
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -63,7 +63,7 @@ public class DAO {
                         ", Admin: "+resultSet.getBoolean("is_admin")+"\n");
             }
             statement.close();
-            sc.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -84,7 +84,7 @@ public class DAO {
                         ", Status: "+resultSet.getString("trans_status")+"\n");
             }
             statement.close();
-            sc.close();
+
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -107,7 +107,7 @@ public class DAO {
                         ", Admin: "+resultSet.getBoolean("is_admin")+"\n");
             }
             preparedStatement.close();
-            sc.close();
+
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -128,7 +128,7 @@ public class DAO {
                         ", Status: "+resultSet.getString("trans_status")+"\n");
             }
             preparedStatement.close();
-            sc.close();
+
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -143,7 +143,6 @@ public class DAO {
                 System.out.println("Total balance: $"+resultSet.getDouble("sum"));
             }
             statement.close();
-            sc.close();
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -157,7 +156,7 @@ public class DAO {
                 System.out.println("Total amount: $"+resultSet.getDouble("sum"));
             }
             statement.close();
-            sc.close();
+
         }catch (SQLException e){
             e.printStackTrace();
         }

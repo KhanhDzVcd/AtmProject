@@ -24,7 +24,7 @@ public class AdminService_impl implements service.AdminService{
                 return true;
             }
             preparedStatement.close();
-            sc.close();
+
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -83,7 +83,7 @@ public class AdminService_impl implements service.AdminService{
         preparedStatement.executeUpdate();
         System.out.println("Update successfully!");
         preparedStatement.close();
-        sc.close();
+
         }catch (SQLException e){
             System.out.println("Update failed!");
             e.printStackTrace();
