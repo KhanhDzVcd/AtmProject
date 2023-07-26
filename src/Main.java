@@ -15,18 +15,20 @@ public class Main {
     static Main main =  null;
     // Clear screen
     public void clearScreen() {
-        //System.out.print("\033[H\033[2J");
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
     // Press any key to continue
     public void pressAnyKeyToContinue() {
-//        System.out.println("Press any key to continue...");
-//        try {
-//            //System.in.read();
-//            clearScreen();
-//        } catch (Exception e) {
-//            System.out.println("An error occurred.");
-//        }
+        System.out.println("Press any key to continue...");
+        try {
+            System.in.read();
+            clearScreen();
+        } catch (Exception e) {
+            System.out.println("An error occurred.");
+            System.out.println("An error occurred.");
+        }
     }
 
     public int getChoice() {
@@ -208,9 +210,6 @@ public class Main {
                     System.out.println("Login successfully!");
                     pressAnyKeyToContinue();
                     clearScreen();
-                    System.out.println("Login successfully! 12323");
-                    int choice1 = getChoice();
-                    System.out.println("Login successfully! aaaaa " + choice1);
                     adminMenu();
                 } else {
                     System.out.println("Login failed!");
