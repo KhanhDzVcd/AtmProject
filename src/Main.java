@@ -1,16 +1,11 @@
 import service_impl.*;
-
-import java.io.BufferedReader;
-import java.nio.Buffer;
 import java.util.*;
 
 public class Main {
 
     private final UserService_impl userService_impl = new UserService_impl();
     private final AdminService_impl adminService_impl = new AdminService_impl();
-    public Scanner scanner = new Scanner(System.in);
-    BufferedReader br = new BufferedReader(new java.io.InputStreamReader(System.in));
-
+    Scanner scanner = new Scanner(System.in);
 
     static Main main =  null;
     // Clear screen
@@ -26,7 +21,6 @@ public class Main {
             System.in.read();
             clearScreen();
         } catch (Exception e) {
-            System.out.println("An error occurred.");
             System.out.println("An error occurred.");
         }
     }
